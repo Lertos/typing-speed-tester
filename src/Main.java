@@ -4,21 +4,27 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+        WordGenerator wg = new WordGenerator(6);
+
         Scanner scanner = new Scanner(System.in);
         String response = "";
 
         while (!response.equalsIgnoreCase("q")) {
-            System.out.println("When you are ready, type 'start' and then type the sentence shown; or 'q' to quit.");
+            System.out.println("When you are ready, type 's' and then type the sentence shown; or 'q' to quit.");
 
             response = scanner.nextLine();
 
             if (response.equalsIgnoreCase("q")) {
                 System.out.println("Thanks for playing!");
                 break;
-            } else if (response.equalsIgnoreCase("start")){
+            } else if (response.equalsIgnoreCase("s")){
                 //Generate a scramble of words for the user to type
-                //TODO: Fix to generate random words from an object
-                System.out.println("this is a full sentence");
+                String[] generatedWords = wg.generateNewWords();
+
+                for (String word : generatedWords)
+                    System.out.print(word + " ");
+
+                System.out.println("");
 
                 //Generate the start time for typing
                 Timestamp startTime = new Timestamp(System.currentTimeMillis());
@@ -33,7 +39,7 @@ public class Main {
                 long timePassed = stopTime.getTime() - startTime.getTime();
                 double secondsPassed = timePassed / 1000.0;
 
-                System.out.println(secondsPassed);
+                wg.checkResults(typedWords, secondsPassed);
             }
 
         }
