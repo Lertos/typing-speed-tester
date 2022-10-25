@@ -17,13 +17,21 @@ Simple
 
 # Example Output:
 When you are ready, type 's' and then type the sentence shown; or 'q' to quit.
+
 s
+
 right creation right right positive right 
+
 right creation right rightt positive right
----------------------------------------------
+
+
 Your stats are as follows:
+
 CPM: 214.14
+
 WPM: 34.73
+
 You got 5 words correct out of 6
+
 You gave your answer in 10.37 seconds
----------------------------------------------
+
